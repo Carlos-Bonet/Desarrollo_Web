@@ -1,11 +1,12 @@
-/*Font Import*/
+/*!
+ * Bootstrap v5.1.0 (https://getbootstrap.com/)
+ * Copyright 2011-2021 The Bootstrap Authors
+ * Copyright 2011-2021 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
-@import "nav";
-@import "body";
-@import "footer";
-@import "cards";
-
+// scss-docs-start import-stack
+// Configuration
 @import "functions";
 @import "variables";
 @import "mixins";
@@ -24,7 +25,7 @@
 @import "transitions";
 @import "dropdown";
 @import "button-group";
-
+@import "nav";
 @import "navbar";
 @import "card";
 @import "accordion";
@@ -50,33 +51,3 @@
 // Utilities
 @import "utilities/api";
 // scss-docs-end import-stack
-
-
-
-/* Reseteo CSS */
-
-*{
-    margin: 0;
-    padding: 0;
-    
-};
-
-html
-
-/*raiz*/
-    {
-    font-size: 100%;
-    /*16px*/
-    font-family: 'Nunito', sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    letter-spacing: normal;
-    word-spacing: normal;
-    line-height: normal;
-    background-color: #dfdfdf
-};
-
-body{
-    background-color: rgb(241, 241, 241);
-}
-

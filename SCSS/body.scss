@@ -1,19 +1,19 @@
 @media only screen and (min-width: 768px) {
     body {
-        background-color: #f3f3f3;
+        background-color: #dfdfdf;
     }
 }
 
 @media (max-width: 767px) {
     body {
-        background-color: white;
+        background-color: #dfdfdf;
     }
 }
 
 h1 {
     color: #020200;
     font-size: 250%;
-    background: #f3f3f3;
+    background-color: rgb(241, 241, 241);
     text-align: center;
     padding: 50px;
 
@@ -55,5 +55,13 @@ article {
     }
 }
 
+body{
+    background-color: #dfdfdf;
+}
 
+
+main{
+    margin-left: 30px;
+    margin-right: 30px;
+}
 
