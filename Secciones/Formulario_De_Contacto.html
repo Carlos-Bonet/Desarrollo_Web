@@ -2,8 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta name= "description" content="Estamos siempre para ayudarte en el ahorro de tus compras, contactanos por cualquier inquietud mediante nuestro formulario de contacto">
-    <meta name="keywords" content="Supermercado, Super, Mercado, Compras, Alimentos, Bebidas, Ahorro, Descuentos, Hipermercado, Hiper">
+    <meta name="description"
+        content="Estamos siempre para ayudarte en el ahorro de tus compras, contactanos por cualquier inquietud mediante nuestro formulario de contacto">
+    <meta name="keywords"
+        content="Supermercado, Super, Mercado, Compras, Alimentos, Bebidas, Ahorro, Descuentos, Hipermercado, Hiper">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,7 +65,7 @@
                 </div>
             </div>
         </nav>
-        
+
 
 
         </nav>
@@ -75,44 +77,84 @@
     <hr>
     <br>
     <br>
-    <form action="" class=letrasRojas style=text-align:center>
-        <fieldset> <br>
-            <legend class="negrita">Datos para Contacto</legend>
-            <label for="Nombre" class="negrita">Nombre:</label>
-            <input type="text" name="Nombre"> <br>
-            <br>
-            <label for="Apellido" class="negrita">Apellido:</label>
-            <input type="text" name="Apellido"> <br>
-            <br>
-            <label for="Correo" class="negrita">Correo Electrónico:</label>
-            <input type="email" name="Correo" placeholder="ejemplo@email.com"> <br>
-            <br>
-            <label for="Telefono" class="negrita">Teléfono:</label>
-            <input type="number" name="Telefono"> <br>
-            <br>
+    <div class="container px-5 my-5">
+        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+            <div class="form-floating mb-3">
+                <input class="form-control" id="nombreYApellido" type="text" placeholder="Nombre y Apellido"
+                    data-sb-validations="required" />
+                <label for="nombreYApellido">Nombre y Apellido</label>
+                <div class="invalid-feedback" data-sb-feedback="nombreYApellido:required">Nombre y Apellido es
+                    requerido.</div>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" id="emailAddress" type="email" placeholder="Email Address"
+                    data-sb-validations="required,email" />
+                <label for="emailAddress">Correo Electrónico</label>
+                <div class="invalid-feedback" data-sb-feedback="emailAddress:required">Correo Electrónico es requerido.
+                </div>
+                <div class="invalid-feedback" data-sb-feedback="emailAddress:email">El Correo Electrónico no es válido.
+                </div>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" id="telefono" type="text" placeholder="Teléfono"
+                    data-sb-validations="required" />
+                <label for="telefono">Teléfono</label>
+                <div class="invalid-feedback" data-sb-feedback="telefono:required">Teléfono es requerido.</div>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea class="form-control" id="message" type="text" placeholder="Message" style="height: 10rem;"
+                    data-sb-validations="required"></textarea>
+                <label for="message">Consulta</label>
+                <div class="invalid-feedback" data-sb-feedback="message:required">Consulta es requerido.</div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label d-block">Preferencia de Contacto</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="telefonico" type="checkbox" name="preferenciaDeContacto"
+                        data-sb-validations="required" />
+                    <label class="form-check-label" for="telefonico">Telefónico</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="correoElectronico" type="checkbox" name="preferenciaDeContacto"
+                        data-sb-validations="required" />
+                    <label class="form-check-label" for="correoElectronico">Correo Electrónico</label>
+                </div>
+                <div class="invalid-feedback" data-sb-feedback="preferenciaDeContacto:required">Al menos debes
+                    seleccionar una opción.</div>
+            </div>
+            <div class="mb-3">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" id="deseoSuscribirmeAlNewsletter" type="checkbox"
+                        name="deseoSuscribirmeAlNewsletter" />
+                    <label class="form-check-label" for="deseoSuscribirmeAlNewsletter">Deseo suscribirme al
+                        Newsletter</label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" id="noSoyUnRobot" type="checkbox" name="noSoyUnRobot" />
+                    <label class="form-check-label" for="noSoyUnRobot">No soy un robot</label>
+                </div>
+            </div>
+            <div class="d-none" id="submitSuccessMessage">
+                <div class="text-center mb-3">
+                    <div class="fw-bolder">¡Consulta enviada con éxito! Pronto nos pondremos en contacto con vos para
+                        brindarte la mejor solución</div>
+                </div>
+            </div>
+            <div class="d-none" id="submitErrorMessage">
+                <div class="text-center text-danger mb-3">Error enviando tu consulta</div>
+            </div>
+            <div class="d-grid">
+                <button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Enviar Consulta</button>
+            </div>
+        </form>
 
-            <label for="Consulta" class="negrita">Detalla tu consulta:</label> <br>
-            <textarea name="Consulta" rows="10" cols="80"> </textarea> <br>
-            <br>
-            <article>
-                <p class="negrita">Preferencia de Contacto:</p>
-                <select name="Tipo de Contacto">
-                    <option value="Seleccionar">Seleccione Preferencia</option>
-                    <option value="Telefonico">Telefónico</option>
-                    <option value="Correo">Correo Electrónico</option>
-                </select>
-            </article><br>
-            <br>
-        </fieldset> <br>
-        <article>
-            <div class="negrita">NO SOY UN ROBOT</div>
-        </article>
-        <input type="checkbox" name="NO SOY UN ROBOT" value="1"> <br>
-        <input type="submit" value="Enviar Consulta" />
-        <input type="reset" value="Limpiar Formulario" /> <br>
+      
+     
+    </div>
 
-
-    </form>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     <br>
     <br>
     <footer>
@@ -137,6 +179,7 @@
                     d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
             </symbol>
         </svg>
+        
         <!-- Menu Footer -->
         <div class="container">
             <footer class="py-5">
@@ -150,7 +193,9 @@
                     </div>
 
                     <div class="col-2">
-                        <a href="../Secciones/Formulario_De_Contacto.html" style="text-decoration: none;"><h5>Centro de Ayuda</h5></a>
+                        <a href="../Secciones/Formulario_De_Contacto.html" style="text-decoration: none;">
+                            <h5>Centro de Ayuda</h5>
+                        </a>
                     </div>
 
                     <div class="col-4 offset-1">
@@ -175,10 +220,10 @@
                                     <use xlink:href="#instagram" /></svg></a></li>
                         <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
                                     <use xlink:href="#facebook" /></svg></a></li>
-                     </ul>
+                    </ul>
                 </div>
         </div>
-             
+
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
